@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/second_nav_host"
+    app:startDestination="@id/fifthFragment">
+    <fragment
+        android:id="@+id/sixthFragment"
+        android:name="com.example.navigationcomponents.fragment.SixthFragment"
+        android:label="fragment_sixth"
+        tools:layout="@layout/fragment_sixth" >
+        <action
+            android:id="@+id/action_sixthFragment_to_seventhFragment"
+            app:destination="@id/seventhFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.example.navigationcomponents.fragment.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" >
+        <action
+            android:id="@+id/action_fifthFragment_to_fourthFragment2"
+            app:destination="@id/fourthFragment2"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/seventhFragment"
+        android:name="com.example.navigationcomponents.fragment.SeventhFragment"
+        android:label="fragment_seventh"
+        tools:layout="@layout/fragment_seventh" >
+        <action
+            android:id="@+id/action_seventhFragment_to_fifthFragment2"
+            app:destination="@id/fifthFragment"
+            app:popUpTo="@id/fifthFragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment2"
+        android:name="com.example.navigationcomponents.fragment.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth">
+        <action
+            android:id="@+id/action_fourthFragment2_to_sixthFragment"
+            app:destination="@id/sixthFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+        <deepLink
+            android:id="@+id/deepLink"
+            android:autoVerify="true"
+            app:uri="www.chibi.com" />
+    </fragment>
+
+    <!--Example for Global Actions-->
+    <action
+        android:id="@+id/action_global_seventhFragment"
+        app:destination="@id/seventhFragment" />
+</navigation>

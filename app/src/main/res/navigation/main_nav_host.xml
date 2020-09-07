@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_host"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.navigationcomponents.fragment.FirstFragment"
+        android:label="First"
+        tools:layout="@layout/fragment_first" />
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.navigationcomponents.fragment.SecondFragment"
+        android:label="Second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.navigationcomponents.fragment.ThirdFragment"
+        android:label="Third"
+        tools:layout="@layout/fragment_third" >
+        <argument
+            android:name="Name"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="PhoneNumber"
+            app:argType="long"
+            android:defaultValue="0L" />
+        <action
+            android:id="@+id/action_thirdFragment_to_secondActivity"
+            app:destination="@id/secondActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/secondActivity"
+        android:name="com.example.navigationcomponents.activity.SecondActivity"
+        android:label="activity_second"
+        tools:layout="@layout/activity_second" />
+</navigation>
